@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Elegante - Premium Collection</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #222;
+        }
+
+        header {
+            background-color: #000;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        nav {
+            background-color: #111;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #bbb;
+            margin: 0 20px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        .banner {
+            height: 400px;
+            background-color: #222;
+            overflow: hidden;
+        }
+
+        .banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 300;
+            font-size: 28px;
+            text-transform: uppercase;
+        }
+
+        /* Rejilla de Productos */
+        .productos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .producto {
+            background-color: white;
+            border: 1px solid #eee;
+            padding: 0 0 20px 0;
+            text-align: center;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .producto:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .producto img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        .info-producto {
+            padding: 20px;
+        }
+
+        .sku {
+            font-size: 11px;
+            color: #888;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .producto h3 {
+            margin: 10px 0;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .precio {
+            font-size: 20px;
+            font-weight: bold;
+            color: #111;
+            margin-bottom: 15px;
+        }
+
+        /* Tallas */
+        .tallas {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .talla-item {
+            border: 1px solid #ddd;
+            padding: 5px 10px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .talla-item:hover {
+            background-color: #000;
+            color: #fff;
+            border-color: #000;
+        }
+
+        /* Botón comprar */
+        .btn-comprar {
+            background-color: #111;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            cursor: pointer;
+            width: 80%;
+            transition: 0.3s;
+        }
+
+        .btn-comprar:hover {
+            background-color: #444;
+        }
+
+        footer {
+            background-color: #000;
+            color: #666;
+            text-align: center;
+            padding: 40px;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>TIENDA ELEGANTE</h1>
+</header>
+
+<nav>
+    <a href="#">INICIO</a>
+    <a href="#">HOMBRES</a>
+    <a href="#">MUJERES</a>
+    <a href="#">ACCESORIOS</a>
+    <a href="#">CONTACTO</a>
+</nav>
+
+<section class="banner">
+    <img src="imagenes/f-accesorios.jpg" alt="Nueva Colección 2026">
+</section>
+
+<div class="container">
+
+    <h2>Productos Disponibles</h2>
+    
+    <div class="productos">
+
+        <div class="producto">
+            <img src="rpdama/gafas.png" alt="gafas de sol">
+            <div class="info-producto">
+                <span class="sku">REF: MOD-2026-001</span>
+                <h3>gafas de sol</h3>
+                <p class="precio">$799.00</p>
+                
+                <div class="tallas">
+                    <div class="talla-item">S</div>
+                    <div class="talla-item">M</div>
+                    <div class="talla-item">L</div>
+                    <div class="talla-item">XL</div>
+                </div>
+
+                <button class="btn-comprar">Comprar</button>
+            </div>
+        </div>
+
+        <div class="producto">
+            <img src="rpdama/reloj.png" alt="reloj de mano">
+            <div class="info-producto">
+                <span class="sku">REF: MOD-2026-042</span>
+                <h3>reloj de mano</h3>
+                <p class="precio">$999.00</p>
+                
+                <div class="tallas">
+                    <div class="talla-item">M</div>
+                    <div class="talla-item">L</div>
+                    <div class="talla-item">XL</div>
+                </div>
+
+                <button class="btn-comprar">Comprar</button>
+            </div>
+        </div>
+
+        <div class="producto">
+            <img src="rpdama/cartera.png" alt="carteras">
+            <div class="info-producto">
+                <span class="sku">REF: MOD-2026-089</span>
+                <h3>carteras</h3>
+                <p class="precio">$599.00</p>
+                
+                <div class="tallas">
+                    <div class="talla-item">CH</div>
+                    <div class="talla-item">M</div>
+                    <div class="talla-item">G</div>
+                </div>
+
+                <button class="btn-comprar">Comprar</button>
+            </div>
+        </div>
+
+         <div class="producto">
+            <img src="rpdama/gorra.png" alt="Gorra">
+            <div class="info-producto">
+                <span class="sku">REF: MOD-2026-089</span>
+                <h3>Gorra</h3>
+                <p class="precio">$599.00</p>
+                
+                <div class="tallas">
+                    <div class="talla-item">CH</div>
+                    <div class="talla-item">M</div>
+                    <div class="talla-item">G</div>
+                </div>
+
+                <button class="btn-comprar">Comprar</button>
+            </div>
+        </div>
+
+         <div class="producto">
+            <img src="rpdama/pulsera.png" alt="pulsera">
+            <div class="info-producto">
+                <span class="sku">REF: MOD-2026-089</span>
+                <h3>pulsera</h3>
+                <p class="precio">$599.00</p>
+                
+                <div class="tallas">
+                    <div class="talla-item">CH</div>
+                    <div class="talla-item">M</div>
+                    <div class="talla-item">G</div>
+                </div>
+
+                <button class="btn-comprar">Comprar</button>
+            </div>
+        </div>
+
+        <div class="producto">
+            <img src="rpdama/mochila.png" alt="mochila">
+            <div class="info-producto">
+                <span class="sku">REF: MOD-2026-112</span>
+                <h3>mochila</h3>
+                <p class="precio">$499.00</p>
+                
+                <div class="tallas">
+                    <div class="talla-item">38</div>
+                    <div class="talla-item">40</div>
+                    <div class="talla-item">42</div>
+                </div>
+
+                <button class="btn-comprar">Comprar</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 TIENDA ELEGANTE | Concept Store</p>
+    <p style="font-size: 10px; margin-top: 10px;">Envíos gratuitos en compras superiores a $1,500</p>
+</footer>
+
+</body>
+</html>

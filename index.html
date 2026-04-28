@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tienda Elegante</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Helvetica Neue', sans-serif;
+            background-color: #f8f8f8;
+            color: #222;
+        }
+
+        header {
+            background-color: #111;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            background-color: #1a1a1a;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #ddd;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        nav a:hover { color: white; }
+
+        .banner { height: 300px; background-color: #ccc; }
+        .banner img { width: 100%; height: 100%; object-fit: cover; }
+
+        .container { padding: 40px; }
+
+        h2 { text-align: center; margin-bottom: 20px; letter-spacing: 1px; }
+
+        /* Categorías */
+        .categorias {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .categoria {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            text-align: center;
+            padding: 20px;
+            transition: 0.3s;
+        }
+
+        .categoria:hover { background-color: #111; color: white; }
+        .categoria img { width: 100%; height: 200px; object-fit: cover; margin-bottom: 10px; background-color: #ddd; }
+
+        /* Productos */
+        .productos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        /* Convertimos el producto en un enlace clickeable */
+        .producto {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: center;
+            transition: 0.3s;
+            text-decoration: none; /* Quitar subrayado */
+            color: inherit; /* Mantener color de texto */
+            display: block;
+            cursor: pointer;
+        }
+
+        .producto:hover { transform: scale(1.03); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .producto img { width: 100%; height: 250px; object-fit: cover; background-color: #ddd; }
+        .producto h3 { margin: 10px 0 5px; font-weight: normal; }
+        .precio { color: #555; font-weight: bold; }
+
+        /* --- ESTILOS DEL FORMULARIO (MODAL SIN JS) --- */
+        .modal-compra {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none; /* Oculto por defecto */
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        /* Truco de CSS: Se muestra cuando la URL termina en #formulario-compra */
+        .modal-compra:target {
+            display: flex;
+        }
+
+        .form-contenido {
+            background: white;
+            padding: 30px;
+            width: 90%;
+            max-width: 400px;
+            position: relative;
+            text-align: left;
+        }
+
+        .form-contenido h3 { margin-top: 0; text-transform: uppercase; border-bottom: 2px solid #111; padding-bottom: 10px; }
+
+        .form-contenido label { display: block; margin-top: 15px; font-size: 12px; font-weight: bold; }
+
+        .form-contenido input, .form-contenido select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+        }
+
+        .btn-enviar {
+            background: #111;
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 15px;
+            margin-top: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .btn-enviar:hover { background: #333; }
+
+        .cerrar-modal {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            text-decoration: none;
+            color: #111;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #111;
+            color: #aaa;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>TIENDA ELEGANTE</h1>
+</header>
+
+<nav>
+    <a href="#">Inicio</a>
+    <a href="#">Categorías</a>
+    <a href="#">Nuevos</a>
+    <a href="#">Contacto</a>
+</nav>
+
+<section class="banner">
+    <img src="rpdama/portada.jpg" alt="Banner principal">
+</section>
+
+<div class="container">
+    <h2>Categorías</h2>
+    <div class="categorias">
+        <div class="categoria">
+            <a href="hombres.html"><img src="rpdama/11.jpg" alt="Hombres"></a>
+            <h3>Hombres</h3>
+        </div>
+        <div class="categoria">
+            <a href="mujeres.html"><img src="rpdama/1.jpg" alt="Mujeres"></a>
+            <h3>Mujeres</h3>
+        </div>
+        <div class="categoria">
+           <a href="accesorios.html"><img src="rpdama/pulsera.png" alt="Accesorios"></a>
+            <h3>Accesorios</h3>
+        </div>
+        <div class="categoria">
+           <a href="deportiva.html"><img src="rpdama/conjuntoF.png" alt="Deportiva"></a>
+            <h3>Deportiva</h3>
+        </div>
+    </div>
+
+    <h2>Productos Destacados</h2>
+    <div class="productos">
+        <a href="#formulario-compra" class="producto">
+            <img src="rpdama/camisaN.png" alt="Producto 1">
+            <h3>Camisa</h3>
+            <p class="precio">$499</p>
+        </a>
+
+        <a href="#formulario-compra" class="producto">
+            <img src="rpdama/vestido.jpg" alt="Producto 2">
+            <h3>Vestido Elegante</h3>
+            <p class="precio">$799</p>
+        </a>
+
+        <a href="#formulario-compra" class="producto">
+            <img src="rpdama/ChamarraH.png" alt="Producto 3">
+            <h3>Chaqueta cuero</h3>
+            <p class="precio">$999</p>
+        </a>
+
+        <a href="#formulario-compra" class="producto">
+            <img src="rpdama/pulsera.png" alt="Producto 4">
+            <h3>pulsera</h3>
+            <p class="precio">$599</p>
+        </a>
+    </div>
+</div>
+
+<div id="formulario-compra" class="modal-compra">
+    <div class="form-contenido">
+        <a href="#" class="cerrar-modal">&times;</a>
+        <h3>Finalizar Compra</h3>
+        <form action="https://formsubmit.co/tu@email.com" method="POST">
+            <label>Nombre Completo</label>
+            <input type="text" name="nombre" placeholder="Ej. Juan Pérez" required>
+
+            <label>Dirección de Envío</label>
+            <input type="text" name="direccion" placeholder="Calle, número, ciudad" required>
+
+            <label>Talla / Medida</label>
+            <select name="talla">
+                <option value="S">Small (S)</option>
+                <option value="M">Medium (M)</option>
+                <option value="L">Large (L)</option>
+                <option value="XL">Extra Large (XL)</option>
+                <option value="Unica">Talla Única</option>
+            </select>
+
+            <button type="submit" class="btn-enviar">Confirmar Pedido</button>
+            
+            <input type="hidden" name="_next" value="https://tuweb.com/gracias.html">
+            <input type="hidden" name="_subject" value="¡Nuevo Pedido en Tienda Elegante!">
+        </form>
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 Tienda Elegante | Estilo monocromático</p>
+</footer>
+
+</body>
+</html>
